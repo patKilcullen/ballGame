@@ -1,0 +1,39 @@
+.main{
+display: flex;
+justify-content: center;
+flex-direction: row;
+align-items: center;
+align-content: center;
+
+}
+.board{
+    width: 75vw;
+    height: 75vh;
+    border: 2px solid black;
+    /* margin: auto; */
+    position: relative;
+}
+.target{
+    width: 5%;
+    height: 8%;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+}
+.catcher{
+    width: 5%;
+    height: 8%;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+}
+.counter{
+    border: 2px solid black;
+    height: 50vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
