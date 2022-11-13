@@ -12,6 +12,8 @@ align-content: center;
     border: 2px solid black;
     /* margin: auto; */
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 .target{
     width: 5%;
@@ -20,6 +22,8 @@ align-content: center;
     border-radius: 50%;
     position: relative;
     box-sizing: border-box;
+    align-self: center; 
+     justify-self: center;
 }
 .catcher{
     width: 5%;
@@ -27,13 +31,18 @@ align-content: center;
     border: 2px solid black;
     border-radius: 50%;
     position: relative;
+    top: -8%;
     box-sizing: border-box;
+    align-self: center;
+   
+    /* justify-self: center; */
 }
 .counter{
     border: 2px solid black;
     height: 50vh;
     width: 10vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
