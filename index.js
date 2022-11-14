@@ -39,108 +39,335 @@ let targetPosition = { x: 20, y: 20, yd: 2, xd: 4 };
 target.style.top = targetPosition.y + "%";
 target.style.left = targetPosition.x + "%";
 
-setInterval(() => {
-  targetPosition.y += targetPosition.yd;
-  if (targetPosition.y >= 45) {
-    targetPosition.yd = -1;
-  }
-  if (targetPosition.y <= -45) {
-    targetPosition.yd = 1;
-  }
-  target.style.top = targetPosition.y + "%";
+// setInterval(() => {
+//   targetPosition.y += targetPosition.yd;
+//   if (targetPosition.y >= 45) {
+//     targetPosition.yd = -1;
+//   }
+//   if (targetPosition.y <= -45) {
+//     targetPosition.yd = 1;
+//   }
+//   target.style.top = targetPosition.y + "%";
 
-  targetPosition.x += targetPosition.xd;
-  if (targetPosition.x >= 50) {
-    targetPosition.xd = -1;
-  }
-  if (targetPosition.x === -45) {
-    targetPosition.xd = 1;
-  }
-  target.style.left = targetPosition.x + "%";
+//   targetPosition.x += targetPosition.xd;
+//   if (targetPosition.x >= 50) {
+//     targetPosition.xd = -1;
+//   }
+//   if (targetPosition.x === -45) {
+//     targetPosition.xd = 1;
+//   }
+//   target.style.left = targetPosition.x + "%";
   
-  if (
-    catcherPosition.y === targetPosition.y &&
-    catcherPosition.x + 5 === targetPosition.x
-  ) {
-    targetCount.textContent ++
-  } 
-}, 1000);
+//   if (
+//     catcherPosition.y === targetPosition.y &&
+//     catcherPosition.x + 5 === targetPosition.x
+//   ) {
+//     targetCount.textContent ++
+//   } 
+// }, 1000);
+
 
 let catcherPosition = { x: 0, y: 0, yd: 1, xd: 1 };
 catcher.style.left = catcherPosition.x + "%";
+
+let up = catcherPosition.y += catcherPosition.yd * -1
+let down = catcherPosition.y += catcherPosition.yd;
+let left = catcherPosition.x -= catcherPosition.xd;
+let right = catcherPosition.x += catcherPosition.xd;
+
+
+// HEEEERRRREEEEEE
+// turn this into a function???  (I wrapped the logic in a function)
+// What would the parameters be?
+// maybe have to use stringify first before can use json.parse
+
+// const getDirections = ()=>{
+
+
+// let directionArray = []
+// while(directionArray.length < 4){
+//     let randomDirection = Math.floor(Math.random() * 4)
+//     // if(randomDirection === 0){
+//     //     // randomDirection = "catcherPosition.y += catcherPosition.yd * -1"
+//     //     randomDirection = catcherPosition.y -= catcherPosition.yd
+//     // }
+//     // if(randomDirection === 1){
+//     //     randomDirection = catcherPosition.y += catcherPosition.yd;
+//     // }
+//     // if(randomDirection === 2){
+//     //     randomDirection = catcherPosition.x -= catcherPosition.xd;
+//     // }
+//     // if(randomDirection === 3){
+//     //     randomDirection = catcherPosition.x += catcherPosition.xd;
+//     // }
+//   if(randomDirection === 0){
+//         // randomDirection = "catcherPosition.y += catcherPosition.yd * -1"
+//         randomDirection = "ArrowUp"
+//     }
+//     if(randomDirection === 1){
+//         randomDirection = "ArrowDown"
+//     }
+//     if(randomDirection === 2){
+//         randomDirection = "ArrowRight"
+//     }
+//     if(randomDirection === 3){
+//         randomDirection = "ArrowLeft"
+//     }
+    
+//     if(!directionArray.includes(randomDirection)){
+//     directionArray.push(randomDirection)
+//     }
+
+// }
+// console.log("DIR 0", directionArray[0])
+// console.log("DIR 1",directionArray[1])
+// console.log("DIR 2",directionArray[2])
+// console.log("DIR 3",directionArray[3])
+
+
+// let catcherPosition = { x: 0, y: 0, yd: 1, xd: 1 };
+// catcher.style.left = catcherPosition.x + "%";
+// document.addEventListener("keydown", (e) => {
+//   if (e.key === "ArrowRight") {
+//     catcherPosition.x += catcherPosition.xd;
+//   }
+//   if (e.key === "ArrowLeft") {
+//     catcherPosition.x -= catcherPosition.xd;
+//   }
+
+//   catcher.style.left = catcherPosition.x + "%";
+
+//   if (e.key === "ArrowDown") {
+//     catcherPosition.y += catcherPosition.yd;
+//   }
+//   if (e.key === "ArrowUp") {
+//     catcherPosition.y -= catcherPosition.yd;
+//     // catcherPosition.y += catcherPosition.yd * -1;
+//   }
+//   catcher.style.top = catcherPosition.y + "%";
+
+// //   if (
+// //     catcherPosition.y === targetPosition.y &&
+// //     catcherPosition.x + 5 === targetPosition.x
+// //   ) {
+// //     catcherCount.textContent ++
+// //     catcher.style.background = "red";
+// //     catcherPosition.yd = catcherPosition.yd * -1;
+// //     catcherPosition.xd = catcherPosition.xd * -1;
+
+// //     targetPosition.yd = targetPosition.yd * -1;
+// //     targetPosition.xd = targetPosition.xd * -1;
+// //   } else {
+// //     catcher.style.background = "white";
+// //   }
+
+
+
+
+//   if (
+//     catcherPosition.y === targetPosition.y &&
+//     catcherPosition.x + 5 === targetPosition.x
+//   ) {
+    
+
+//     catcherCount.textContent ++
+//     catcher.style.background = "red";
+//     let directionArray = []
+//     while(directionArray.length < 4){
+//         let randomDirection = Math.floor(Math.random() * 4)
+//       if(randomDirection === 0){
+//             randomDirection = "ArrowUp"
+//         }
+//         if(randomDirection === 1){
+//             randomDirection = "ArrowDown"
+//         }
+//         if(randomDirection === 2){
+//             randomDirection = "ArrowRight"
+//         }
+//         if(randomDirection === 3){
+//             randomDirection = "ArrowLeft"
+//         }
+//         if(!directionArray.includes(randomDirection)){
+//         directionArray.push(randomDirection)
+//         }
+   
+//     }
+//     console.log("ERECTION ARRAY", directionArray)
+//     console.log(directionArray[0])
+//     console.log(directionArray[1])
+//     console.log(directionArray[2])
+//     console.log(directionArray[3])
+//     // document.addEventListener("keydown", (e) => {
+//         if (e.key === directionArray[0]) {
+//             console.log("one",directionArray[0] )
+//           catcherPosition.x += catcherPosition.xd;
+//           catcher.style.left = catcherPosition.x + "%";
+//         }
+//         if (e.key === directionArray[1] ) {
+//             console.log("two",directionArray[1] )
+//           catcherPosition.x -= catcherPosition.xd;
+//           catcher.style.left = catcherPosition.x + "%";
+//         }
+//         if (e.key === directionArray[2]) {
+//             console.log("twee",directionArray[2] )
+//           catcherPosition.y += catcherPosition.yd;
+//           catcher.style.top = catcherPosition.y + "%";
+//         }
+//         if (e.key === directionArray[3]) {
+//             console.log("fo",directionArray[3] )
+//           catcherPosition.y -= catcherPosition.yd;
+//           // catcherPosition.y += catcherPosition.yd * -1;
+//           catcher.style.top = catcherPosition.y + "%";
+//         }
+//         // catcher.style.top = catcherPosition.y + "%";
+//         // catcher.style.left = catcherPosition.x + "%";
+//     // })
+//   } else {
+//     catcher.style.background = "white";
+//   }
+// });
+
+
+
+
+
+
+
 document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowRight") {
-    catcherPosition.x += catcherPosition.xd;
-  }
-  if (e.key === "ArrowLeft") {
-    catcherPosition.x -= catcherPosition.xd;
-  }
+    let directionArray = []
+    while(directionArray.length < 4){
+        let randomDirection = Math.floor(Math.random() * 4)
+      if(randomDirection === 0){
+            randomDirection = "ArrowUp"
+        }
+        if(randomDirection === 1){
+            randomDirection = "ArrowDown"
+        }
+        if(randomDirection === 2){
+            randomDirection = "ArrowRight"
+        }
+        if(randomDirection === 3){
+            randomDirection = "ArrowLeft"
+        }
+        if(!directionArray.includes(randomDirection)){
+        directionArray.push(randomDirection)
+        }
+   
+    }
+    console.log("ERECTION ARRAY", directionArray)
+    console.log(directionArray[0])
+    console.log(directionArray[1])
+    console.log(directionArray[2])
+    console.log(directionArray[3])
 
-  catcher.style.left = catcherPosition.x + "%";
+    if (e.key === directionArray[0]) {
+        catcherPosition.x += catcherPosition.xd;
+      }
+      if (e.key === directionArray[1]) {
+        catcherPosition.x -= catcherPosition.xd;
+      }
+    
+      catcher.style.left = catcherPosition.x + "%";
+    
+      if (e.key === directionArray[2]) {
+        catcherPosition.y += catcherPosition.yd;
+      }
+      if (e.key === directionArray[3]) {
+        catcherPosition.y -= catcherPosition.yd;
+        // catcherPosition.y += catcherPosition.yd * -1;
+      }
+      catcher.style.top = catcherPosition.y + "%";
 
-  if (e.key === "ArrowDown") {
-    catcherPosition.y += catcherPosition.yd;
-  }
-  if (e.key === "ArrowUp") {
-    catcherPosition.y += catcherPosition.yd * -1;
-  }
-  catcher.style.top = catcherPosition.y + "%";
 
-//   console.log("CATCHER left: ", catcherPosition.x);
-//   console.log("CATCHER top: ", catcherPosition.y + 8);
-//   console.log("....");
-//   console.log("TARGET left: ", targetPosition.x);
-//   console.log("TARGET top: ", targetPosition.y);
-//   console.log("------------------");
 
-  if (
-    catcherPosition.y === targetPosition.y &&
-    catcherPosition.x + 5 === targetPosition.x
-  ) {
-    catcherCount.textContent ++
-    catcher.style.background = "red";
-    catcherPosition.yd = catcherPosition.yd * -1;
-    catcherPosition.xd = catcherPosition.xd * -1;
 
-    targetPosition.yd = targetPosition.yd * -1;
-    targetPosition.xd = targetPosition.xd * -1;
-  } else {
-    catcher.style.background = "white";
-  }
 
-  // if(catcherPosition.y  === targetPosition.y && catcherPosition.x + 5 === targetPosition.x){
-  // if(catcherPosition.x < 45){
-  //    catcher.style.background = "red"
-  //     // catcherPosition.yd = (catcherPosition.yd *-1)
-  //     // catcherPosition.xd = (catcherPosition.xd *-1)
 
-  //     // targetPosition.yd = (targetPosition.yd *-1)
-  //     // targetPosition.xd = (targetPosition.xd *-1)
 
-  //     if(e.key === "ArrowRight"){
-  //     catcherPosition.x -= catcherPosition.xd
-  //         // catcher.style.left = catcherPosition.x + "%"
-  //     }
 
-  // }
-  // if(catcherPosition.x > -50){
-  //     if(e.key === "ArrowLeft"){
-  //     catcherPosition.x += catcherPosition.xd
-  //     // catcher.style.left = catcherPosition.x + "%"
-  //     }
-  // }
-  // catcher.style.left = catcherPosition.x + "%"
 
-  // if(e.key === "ArrowDown" && catcherPosition.y < 45 ){
 
-  //     catcherPosition.y += catcherPosition.yd
-  //     catcher.style.top = catcherPosition.y + "%"
-  // }
-  // if(e.key === "ArrowUp" && catcherPosition.y > -45){
 
-  //     catcherPosition.y += (catcherPosition.yd * -1)
-  //     catcher.style.top = catcherPosition.y + "%"
-  // }
 
-  // }
-});
+
+
+    // if (e.key === "ArrowRight") {
+    //   catcherPosition.x += catcherPosition.xd;
+    // }
+    // if (e.key === "ArrowLeft") {
+    //   catcherPosition.x -= catcherPosition.xd;
+    // }
+  
+    // catcher.style.left = catcherPosition.x + "%";
+  
+    // if (e.key === "ArrowDown") {
+    //   catcherPosition.y += catcherPosition.yd;
+    // }
+    // if (e.key === "ArrowUp") {
+    //   catcherPosition.y -= catcherPosition.yd;
+    //   // catcherPosition.y += catcherPosition.yd * -1;
+    // }
+    // catcher.style.top = catcherPosition.y + "%";
+
+    if (
+      catcherPosition.y === targetPosition.y &&
+      catcherPosition.x + 5 === targetPosition.x
+    ) {
+      
+  
+      catcherCount.textContent ++
+      catcher.style.background = "red";
+    //   let directionArray = []
+    //   while(directionArray.length < 4){
+    //       let randomDirection = Math.floor(Math.random() * 4)
+    //     if(randomDirection === 0){
+    //           randomDirection = "ArrowUp"
+    //       }
+    //       if(randomDirection === 1){
+    //           randomDirection = "ArrowDown"
+    //       }
+    //       if(randomDirection === 2){
+    //           randomDirection = "ArrowRight"
+    //       }
+    //       if(randomDirection === 3){
+    //           randomDirection = "ArrowLeft"
+    //       }
+    //       if(!directionArray.includes(randomDirection)){
+    //       directionArray.push(randomDirection)
+    //       }
+     
+    //   }
+    //   console.log("ERECTION ARRAY", directionArray)
+    //   console.log(directionArray[0])
+    //   console.log(directionArray[1])
+    //   console.log(directionArray[2])
+    //   console.log(directionArray[3])
+      // document.addEventListener("keydown", (e) => {
+          if (e.key === directionArray[0]) {
+              console.log("one",directionArray[0] )
+            catcherPosition.x += catcherPosition.xd;
+            catcher.style.left = catcherPosition.x + "%";
+          }
+          if (e.key === directionArray[1] ) {
+              console.log("two",directionArray[1] )
+            catcherPosition.x -= catcherPosition.xd;
+            catcher.style.left = catcherPosition.x + "%";
+          }
+          if (e.key === directionArray[2]) {
+              console.log("twee",directionArray[2] )
+            catcherPosition.y += catcherPosition.yd;
+            catcher.style.top = catcherPosition.y + "%";
+          }
+          if (e.key === directionArray[3]) {
+              console.log("fo",directionArray[3] )
+            catcherPosition.y -= catcherPosition.yd;
+            // catcherPosition.y += catcherPosition.yd * -1;
+            catcher.style.top = catcherPosition.y + "%";
+          }
+          // catcher.style.top = catcherPosition.y + "%";
+          // catcher.style.left = catcherPosition.x + "%";
+      // })
+    } else {
+      catcher.style.background = "white";
+    }
+  });
